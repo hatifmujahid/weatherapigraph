@@ -16,6 +16,7 @@ const httpServer = http.createServer(app);
 const typeDefs = gql`
     type Query{
         getWeather(lat:Float!,lon:Float!): Weather
+        getLocation(city:String!): Weather
     }
     type Weather{
         weather: [WeatherInfo!]
@@ -23,7 +24,6 @@ const typeDefs = gql`
         wind: Wind!
         name: String!
         sys: Sys!
-
     }
     type Coord{
         lon: Float!
@@ -57,6 +57,10 @@ const resolvers = {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`);
             return response.json();
         },    
+        getLocation: async(_, {city}) =>{
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}&units=metric`);
+            return response.json();
+        }
     }
 };
 
