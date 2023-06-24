@@ -91,6 +91,10 @@ query {
 
 Replace `lat` and `lon` with the coordinates of the desired location.
 
+## snapshot 
+![image](https://github.com/hatifmujahid/weatherapigraph/assets/56687118/62c659ba-6da3-4f4f-b5f4-a18eaed69ae4)
+
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or want to enhance the project, feel free to submit a pull request. Make sure to follow the existing code style and write appropriate tests.
