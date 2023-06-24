@@ -27,7 +27,7 @@ const startApolloServer = async (app, httpServer) => {
         resolvers,
         plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     });
-    await server.start().then(() => console.log("Apollo Server started"));
+    await server.start();
     server.applyMiddleware({ app });
 }
 
